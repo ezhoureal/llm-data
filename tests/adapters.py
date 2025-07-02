@@ -10,21 +10,20 @@ def run_extract_text_from_html_bytes(html_bytes: bytes) -> str | None:
     return extract.extract_text(html_bytes)
 
 
+from cs336_data import identify
 def run_identify_language(text: str) -> tuple[Any, float]:
-    from cs336_data import identify
     return identify.identify_language(text)
 
-
 def run_mask_emails(text: str) -> tuple[str, int]:
-    raise NotImplementedError
+    return identify.identify_email(text)
 
 
 def run_mask_phone_numbers(text: str) -> tuple[str, int]:
-    raise NotImplementedError
+    return identify.identify_phone_number(text)
 
 
 def run_mask_ips(text: str) -> tuple[str, int]:
-    raise NotImplementedError
+    return identify.identify_ip(text)
 
 
 def run_classify_nsfw(text: str) -> tuple[Any, float]:
