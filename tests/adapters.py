@@ -37,9 +37,9 @@ def run_classify_toxic_speech(text: str) -> tuple[Any, float]:
 def run_classify_quality(text: str) -> tuple[Any, float]:
     raise NotImplementedError
 
-
 def run_gopher_quality_filter(text: str) -> bool:
-    raise NotImplementedError
+    from cs336_data import quality_filter
+    return quality_filter.rate(text)
 
 
 def run_exact_line_deduplication(
