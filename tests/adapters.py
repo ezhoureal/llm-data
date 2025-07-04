@@ -57,4 +57,12 @@ def run_minhash_deduplication(
     jaccard_threshold: float,
     output_directory: os.PathLike,
 ):
-    raise NotImplementedError
+    from cs336_data.dedup import fuzzy_deduplicate
+    fuzzy_deduplicate(
+        input_files,
+        num_hashes=num_hashes,
+        num_bands=num_bands,
+        ngram_length=ngrams,
+        jaccard_threshold=jaccard_threshold,
+        output_dir=output_directory,
+    )
